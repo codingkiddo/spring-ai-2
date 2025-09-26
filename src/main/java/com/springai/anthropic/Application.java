@@ -8,15 +8,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * Excluding the below auto-configurations to avoid start up
- * failure. Their corresponding starters are present on the classpath but are
- * only needed by other articles in the shared codebase.
+ * Excluding the below auto-configurations to avoid start up failure. Their corresponding starters
+ * are present on the classpath but are only needed by other articles in the shared codebase.
  */
-@SpringBootApplication(exclude = {
-    OpenAiAutoConfiguration.class,
-    PgVectorStoreAutoConfiguration.class,
-    ChromaVectorStoreAutoConfiguration.class
-})
+@SpringBootApplication(
+        exclude = {
+            OpenAiAutoConfiguration.class,
+            PgVectorStoreAutoConfiguration.class,
+            ChromaVectorStoreAutoConfiguration.class
+        })
 @PropertySource("classpath:application-anthropic.properties")
 public class Application {
 
